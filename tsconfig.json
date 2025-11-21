@@ -13,7 +13,7 @@
       "@/*": ["./src/*"]
     },
     "target": "es2020",
-    "types": [],
+    "types": ["node", "vitest/globals"],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
