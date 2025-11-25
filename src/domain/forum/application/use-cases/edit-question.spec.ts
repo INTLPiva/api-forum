@@ -1,10 +1,10 @@
 import { InMemoryQuestionsRepository } from "test/in-memory-questions-repository";
-import { makeQuestion } from "test/factories/make-question";
 import { EditQuestionUseCase } from "./edit-question";
-import { UniqueEntityId } from "@/core/entities/unique-entity-id";
-import { NotAllowedError } from "./errors/not-allowed-error";
 import { InMemoryQuestionAttachmentsRepository } from "test/in-memory-question-attachments-repository";
+import { makeQuestion } from "test/factories/make-question";
+import { UniqueEntityId } from "@/core/entities/unique-entity-id";
 import { makeQuestionAttachment } from "test/factories/make-question-attachment";
+import { NotAllowedError } from "./errors/not-allowed-error";
 
 let inMemoryQuestionsRepository: InMemoryQuestionsRepository;
 let inMemoryQuestionAttachmentsRepository: InMemoryQuestionAttachmentsRepository;
@@ -12,9 +12,11 @@ let sut: EditQuestionUseCase;
 
 describe("Edit Question", () => {
   beforeEach(() => {
-    inMemoryQuestionsRepository = new InMemoryQuestionsRepository();
     inMemoryQuestionAttachmentsRepository =
       new InMemoryQuestionAttachmentsRepository();
+    inMemoryQuestionsRepository = new InMemoryQuestionsRepository(
+      inMemoryQuestionAttachmentsRepository
+    );
 
     sut = new EditQuestionUseCase(
       inMemoryQuestionsRepository,
@@ -44,8 +46,8 @@ describe("Edit Question", () => {
     );
 
     await sut.execute({
+      questionId: newQuestion.id.toValue(),
       authorId: "author-1",
-      questionId: newQuestion.id.toString(),
       title: "Pergunta teste",
       content: "Conteúdo teste",
       attachmentsIds: ["1", "3"],
@@ -55,6 +57,7 @@ describe("Edit Question", () => {
       title: "Pergunta teste",
       content: "Conteúdo teste",
     });
+
     expect(
       inMemoryQuestionsRepository.items[0]?.attachments.currentItems
     ).toHaveLength(2);
