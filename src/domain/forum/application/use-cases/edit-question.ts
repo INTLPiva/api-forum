@@ -5,8 +5,8 @@ import { QuestionAttachmentsRepository } from "@/domain/forum/application/reposi
 import { QuestionAttachmentList } from "@/domain/forum/enterprise/entities/question-attachment-list";
 import { QuestionAttachment } from "@/domain/forum/enterprise/entities/question-attachment";
 import { UniqueEntityId } from "@/core/entities/unique-entity-id";
-import { ResourceNotFoundError } from "./errors/resource-not-found-error";
-import { NotAllowedError } from "./errors/not-allowed-error";
+import { ResourceNotFoundError } from "../../../../core/errors/errors/resource-not-found-error";
+import { NotAllowedError } from "../../../../core/errors/errors/not-allowed-error";
 
 interface EditQuestionUseCaseRequest {
   authorId: string;
