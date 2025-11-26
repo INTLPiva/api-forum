@@ -1,8 +1,8 @@
-import { InMemoryAnswersRepository } from "test/in-memory-answers-repository";
+import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
 import { makeAnswer } from "test/factories/make-answer";
-import { InMemoryAnswerCommentsRepository } from "test/in-memory-answer-comments-repository";
+import { InMemoryAnswerCommentsRepository } from "test/repositories/in-memory-answer-comments-repository";
 import { CommentOnAnswerUseCase } from "./comment-on-answer";
-import { InMemoryAnswerAttachmentsRepository } from "test/in-memory-answer-attachment-repository";
+import { InMemoryAnswerAttachmentsRepository } from "test/repositories/in-memory-answer-attachment-repository";
 
 let inMemoryAnswerAttachmentsRepository: InMemoryAnswerAttachmentsRepository;
 let inMemoryAnswersRepository: InMemoryAnswersRepository;

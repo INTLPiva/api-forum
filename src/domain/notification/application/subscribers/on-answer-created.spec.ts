@@ -1,10 +1,10 @@
 import { OnAnswerCreated } from "@/domain/notification/application/subscribers/on-answer-created";
 import { makeAnswer } from "test/factories/make-answer";
-import { InMemoryAnswerAttachmentsRepository } from "test/in-memory-answer-attachment-repository";
-import { InMemoryAnswersRepository } from "test/in-memory-answers-repository";
-import { InMemoryNotificationsRepository } from "test/in-memory-notification-repository";
-import { InMemoryQuestionAttachmentsRepository } from "test/in-memory-question-attachments-repository";
-import { InMemoryQuestionsRepository } from "test/in-memory-questions-repository";
+import { InMemoryAnswerAttachmentsRepository } from "test/repositories/in-memory-answer-attachment-repository";
+import { InMemoryAnswersRepository } from "test/repositories/in-memory-answers-repository";
+import { InMemoryNotificationsRepository } from "test/repositories/in-memory-notification-repository";
+import { InMemoryQuestionAttachmentsRepository } from "test/repositories/in-memory-question-attachments-repository";
+import { InMemoryQuestionsRepository } from "test/repositories/in-memory-questions-repository";
 import {
   SendNotificationUseCase,
   SendNotificationUseCaseRequest,

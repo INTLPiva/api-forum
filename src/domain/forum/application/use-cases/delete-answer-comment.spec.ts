@@ -1,4 +1,4 @@
-import { InMemoryAnswerCommentsRepository } from "test/in-memory-answer-comments-repository";
+import { InMemoryAnswerCommentsRepository } from "test/repositories/in-memory-answer-comments-repository";
 import { DeleteAnswerCommentUseCase } from "./delete-answer-comment";
 import { makeAnswerComment } from "test/factories/make-answer-comment";
 import { UniqueEntityId } from "@/core/entities/unique-entity-id";
