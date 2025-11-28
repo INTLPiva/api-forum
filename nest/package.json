@@ -44,6 +44,7 @@
     "@types/node": "^22.10.7",
     "@types/passport-jwt": "^4.0.1",
     "@vitest/coverage-v8": "^4.0.14",
+    "dotenv": "^17.2.3",
     "eslint": "^9.39.1",
     "globals": "^16.0.0",
     "prisma": "^5.10.2",
